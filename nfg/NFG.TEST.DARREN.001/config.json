@@ -1,0 +1,24 @@
+{
+  "id": "NFG.TEST.DARREN.001",
+  "version": 1,
+  "description": "Annual liquidity-pool allocation test rule",
+  "allocation": {
+    "quarter_of_total_bps": 2500,
+    "deduction_from_quarter_bps": 6000,
+    "liquidity_pool_of_quarter_bps": 4000,
+    "effective_liquidity_pool_of_total_bps": 1000
+  },
+  "formula": "liquidity_pool = (total / 4) - (0.60 * (total / 4))",
+  "simplified_formula": "liquidity_pool = total * 0.10",
+  "cycle": {
+    "frequency": "YEARLY",
+    "end_month": 12,
+    "end_day": 16,
+    "timezone": "America/Chicago"
+  },
+  "controls": {
+    "test_mode": true,
+    "live_transfer": false,
+    "requires_explicit_settlement_adapter": true
+  }
+}
